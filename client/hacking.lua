@@ -10,27 +10,27 @@ local recentHack = 0
 
 RegisterNetEvent("blackmarket:client:GetCode", function()
     local player = cache.ped
-    local zoneOptions = Config.Hacking.ZoneOptions
-    local hackItem = exports.ox_inventory:Search('count', Config.Hacking.HackItem)
+    local zoneOptions = Config.Hacking
+    local hackItem = exports.ox_inventory:Search('count', zoneOptions.HackItem)
     
     if hackItem == 0 then
         lib.notify({
             title = 'Missing items',
-            description = "You're missing tools",
+            description = "You'll need a laptop to plug in to this",
             type = 'error',
         })
         return
     end
 
     if recentHack == 0 or GetGameTimer() > recentHack then
-        lib.requestAnimDict("amb@world_human_bum_wash@male@low@idle_a")
-        TaskPlayAnim(player, 'amb@world_human_bum_wash@male@low@idle_a', 'idle_a', 1.0, 1.0, -1, 01, 0, true, true, true)
         exports['ps-ui']:VarHack(function(success)
             if success then
+                lib.requestAnimDict("amb@world_human_bum_wash@male@low@idle_a")
+                TaskPlayAnim(player, 'amb@world_human_bum_wash@male@low@idle_a', 'idle_a', 1.0, 1.0, -1, 01, 0, true, true, true)
                 if lib.progressCircle({
-                    duration = zoneOptions.HackDuration * 1000,
+                    duration = 3000,
                     position = 'bottom',
-                    label = zoneOptions.HackProgressbarLabel,
+                    label = "Hacking ...",
                     useWhileDead = false,
                     canCancel = true,
                     disable = {
@@ -53,7 +53,7 @@ RegisterNetEvent("blackmarket:client:GetCode", function()
                     }
                 })
                 then
-                    recentHack = GetGameTimer() + (zoneOptions.Cooldown * 1000)
+                    recentHack = GetGameTimer() + (zoneOptions.HackCooldown * 1000)
                     ClearPedTasksImmediately(player)
                     local correctCode = lib.callback.await('blackmarket:server:GenerateNumberCode', false)
                     lib.notify({
@@ -71,6 +71,7 @@ RegisterNetEvent("blackmarket:client:GetCode", function()
                     })
                 end
             else
+                recentHack = GetGameTimer() + (zoneOptions.HackCooldown * 1000)
                 ClearPedTasksImmediately(player)
                 lib.notify({
                     title = 'Failed',
@@ -82,7 +83,7 @@ RegisterNetEvent("blackmarket:client:GetCode", function()
     else
         lib.notify({
             title = 'Attention',
-            description = 'Looks like someone already hit this',
+            description = 'This already looks fried',
             type = 'inform',
         })
     end
@@ -94,7 +95,6 @@ end)
 
 CreateThread(function()
     local locations = Config.Hacking.Locations
-    local zoneOptions = Config.Hacking.ZoneOptions
     
     for _, hackLocations in pairs(locations) do
         exports.ox_target:addSphereZone({
@@ -105,7 +105,7 @@ CreateThread(function()
             options = {
                 {
                     event = "blackmarket:client:GetCode",
-                    label = zoneOptions.HackLabel,
+                    label = "Plug in",
                     icon = "fa-solid fa-code",
                     iconColor = "purple",
                     distance = 1.0,

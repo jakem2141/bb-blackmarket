@@ -148,12 +148,7 @@ Config.EntranceTypes = {
 
 Config.Hacking = { -- Locations where players can "Hack" to get the [NumberCode] for the entrance
     HackItem = "laptop", -- Item needed to begin hack
-    ZoneOptions = {
-        HackDuration = 10, -- How long the hack takes in seconds
-        HackProgressbarLabel = "Doing hacker stuff",
-        HackLabel = "Hack in", -- Label the player see's when targeting the zone
-        Cooldown = 60, -- Cooldown for obtaining [NumberCode] in seconds
-    },
+    HackCooldown = 60, -- Hack cooldown in seconds
     Locations = { -- You can add as many locations here as you like
         vector3(43.41, -668.6, 31.74),
         vector3(475.62, -1017.01, 28.0),
