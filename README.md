@@ -26,7 +26,7 @@ configurable questions/riddles from the [Config.EntranceTypes.Riddles]
 
 # How do players exit the market?
 
-Players can simply speak to a ped inside the market to leave. Upon leaving the market, the player will be respawned in one of the locations from [ExitInfo.ExitLocations] table (We prefer to keep these locations within a fair walking distance of local traffic or a garage)
+Players can simply speak to a ped inside the market to leave. Upon leaving the market, the player will be respawned in one of the locations from [ExitInfo.ExitLocations] table (I prefer to keep these locations within a fair walking distance of local traffic or a garage)
 
 # FAQ
 
@@ -36,8 +36,8 @@ Easy! Every location (Minus particle effects and the like) are all in the config
 
 # Why can't my players take a car inside the market?
 
-SIMPLE! Not all server owners will have this location in a vehicle friendly location and we didn't want to make a config value and a bunch of code for some to do so and others not
+SIMPLE! Not all server owners will have this location in a vehicle friendly location!
 
 # Why aren't you using ["marked_bills"] for your currency of dirty money?
 
-Whilst this resource is free and we'd love to see it on every server out there, before anything else we've designed it for OUR server specifically and with it being open source, you're free and encouraged to make changes!
+To be frank ... because I don't want to - But that's the beauty of it being open source! You can change whatever you like!
