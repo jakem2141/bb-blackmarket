@@ -32,7 +32,7 @@ Players can simply speak to a ped inside the market to leave. Upon leaving the m
 
 # How do I move the locations of stuff?
 
-Easy! Every location (Minus particle effects and the like) are all in the config. So, moving everyhting is kept just about all in one place!
+Easy! Every location (Minus particle effects and the like) are all in the config. So, moving everything is kept just about all in one place!
 
 # Why can't my players take a car inside the market?
 
