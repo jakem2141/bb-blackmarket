@@ -35,7 +35,6 @@ Config.BlackMarketAccess = {
         RepairsPedLocation = vector4(907.85, -3211.16, -99.23, 23.39),
         RepairsPedAnimationDict = "missfbi5ig_15",
         RepairsPedAnimationClip = "look_into_microscope_a_scientista",
-        RepairDuration = 3000, -- How long it takes to repair a weapon in ms
         RepairCost = 1000, -- [Config.MoneyItem] is the currency for this
     },
 }
