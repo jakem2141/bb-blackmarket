@@ -116,13 +116,13 @@ CreateThread(function()
         debug = Config.Debug,
         options = {
             {
-                event = 'blackmarket:ExitMenu',
                 label = "Speak to "..exit.ExitPedName,
-                args = exit.ExitPedName,
+                onSelect = function()
+                    LeavingMarket()
+                end,
                 icon = "fa-solid fa-box-archive",
                 iconColor = "yellow",
                 distance = 2, 
-                debug = Config.Debug,
             },
         },
     })
