@@ -164,7 +164,7 @@ Config.Hacking = { -- Locations where players can "Hack" to get the [NumberCode]
 --Money Washing--
 -----------------
 
-Config.UseMoneyLaundering = true -- False if you don't want laundering system to start
+Config.UseMoneyLaundering = true -- [false] If you don't want to use this money washing
 Config.DirtyMoneyItem = "black_money"
 Config.StoreCut = 0.1
 Config.RobDuration = 1 -- How long it taskes to rob a store in seconds
