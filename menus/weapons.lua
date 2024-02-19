@@ -22,10 +22,10 @@ RegisterNetEvent('blackmarket:RepairMenu', function(data)
         title = "Weapon Repairs",
         description = repairWeaponDescription,
         event = 'blackmarket:client:RepairWeapon',
-        args = data,
         icon = 'fa-solid fa-hammer',
         iconColor = "yellow",
-        readOnly = data.args.RepairCost > moneyAmount
+        readOnly = data.args.RepairCost > moneyAmount,
+        args = data,
     }
 
     lib.registerContext({

@@ -164,12 +164,15 @@ CreateThread(function()
     local sales = Config.ItemSelling.SalesPed
     local pedCoords = sales.SalesPedLocation
     local sellingData = Config.ItemSelling.ItemInfo
+    local randomLocation = math.random(1, #sales.SalesPedLocations)
+    local salesLocation = sales.SalesPedLocations[randomLocation]
 
     lib.requestModel(sales.SalesPedModel)
-    local salesPed = CreatePed(1, sales.SalesPedModel, sales.SalesPedLocation, false, true)
+    local salesPed = CreatePed(1, sales.SalesPedModel, salesLocation, false, true)
     SetEntityInvincible(salesPed, true)
     SetBlockingOfNonTemporaryEvents(salesPed, true)
     FreezeEntityPosition(salesPed, true)
+    SetEntityHeading(salesPed, salesLocation.w)
 
     if Config.UseAnims then
         lib.requestAnimDict(sales.SalesPedAnimationDict)
@@ -177,7 +180,7 @@ CreateThread(function()
     end
 
     exports.ox_target:addSphereZone({
-        coords = vec3(pedCoords.x, pedCoords.y, pedCoords.z+1),
+        coords = vec3(salesLocation.x, salesLocation.y, salesLocation.z+1),
         radius = 1,
         debug = Config.Debug,
         options = {

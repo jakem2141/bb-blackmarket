@@ -18,17 +18,17 @@ RegisterNetEvent('blackmarket:EntranceMenu', function(data)
     headerMenu[#headerMenu + 1] = {
         title = "Welcome",
         description = "Answer riddle",
+        event = "blackmarket:RiddleInput",
         icon = 'fa-solid fa-question',
         iconColor = "yellow",
-        event = "blackmarket:RiddleInput",
     }
 
     headerMenu[#headerMenu + 1] = {
         title = "Welcome",
         description = "Provide entrance code",
+        event = "blackmarket:CodeInput",
         icon = 'fa-solid fa-hashtag',
         iconColor = "green",
-        event = "blackmarket:CodeInput",
     }
 
     lib.registerContext({
@@ -80,8 +80,9 @@ RegisterNetEvent("blackmarket:RiddleInput", function()
     end
 
     local selectedOption = options[input[1]]
+
     if selectedOption == nil then
-        print("No answer selected")
+        return
     end
 
     local selectedAnswer = selectedOption.label

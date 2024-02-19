@@ -43,7 +43,10 @@ Config.ItemSelling = {
     SalesPed = { -- Must be unique
         SalesPedModel = "a_m_m_malibu_01",
         SalesPedName = "Sales Ped",
-        SalesPedLocation = vector4(-381.39, -2682.38, 5.0, 329.84),
+        SalesPedLocations = {
+            vector4(-381.39, -2682.38, 5.0, 329.84),
+            vector4(-379.5, -2673.17, 5.02, 343.19),
+        },
         SalesPedAnimationDict = "amb@world_human_leaning@female@wall@back@hand_up@idle_a",
         SalesPedAnimationClip = "idle_a",
     },

@@ -1,5 +1,5 @@
 RegisterNetEvent('blackmarket:SellingMenu', function(data)
-    PlayPedAmbientSpeechNative(v.entity, 'GENERIC_HOWS_IT_GOING', 'Speech_Params_Force')
+    PlayPedAmbientSpeechNative(data.entity, 'GENERIC_HOWS_IT_GOING', 'Speech_Params_Force')
 	local headerMenu = {}
     
     local standardItems = data.args.StandardItems
@@ -18,11 +18,9 @@ RegisterNetEvent('blackmarket:SellingMenu', function(data)
 
             headerMenu[#headerMenu + 1] = {
                 title = "Sell "..exports.ox_inventory:Items(itemData.item).label,
-                image = "nui://ox_inventory/web/images/"..itemData.item..".png",
                 description = sellableItemDescription,
-                icon = 'fa-solid fa-dollar',
-                iconColor = "green",
                 serverEvent = "blackmarket:server:SellItems",
+                icon = "nui://ox_inventory/web/images/"..itemData.item..".png",
                 readOnly = not hasItem,
                 args = {
                     item = itemData.item,
@@ -44,8 +42,8 @@ RegisterNetEvent('blackmarket:SellingMenu', function(data)
         headerMenu[#headerMenu + 1] = {
             title = "Sell "..exports.ox_inventory:Items(itemData.item).label,
             description = sellableItemDescription,
-            icon = "nui://ox_inventory/web/images/"..itemData.item..".png",
             serverEvent = "blackmarket:server:SellItems",
+            icon = "nui://ox_inventory/web/images/"..itemData.item..".png",
             readOnly = not hasItem,
             args = {
                 item = itemData.item,
