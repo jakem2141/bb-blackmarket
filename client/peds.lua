@@ -14,13 +14,12 @@ CreateThread(function()
                 debug = Config.Debug,
                 options = {
                     {
-                        event = 'blackmarket:LaunderMenu',
                         label = "Speak to "..shop.ShopName.." owner",
+                        event = 'blackmarket:LaunderMenu',
                         args = shop,
                         icon = "fa-solid fa-basket-shopping",
                         iconColor = "white",
                         distance = 2,
-                        debug = Config.Debug, 
                     },
                 },
             })
@@ -48,13 +47,12 @@ CreateThread(function()
             debug = Config.Debug,
             options = {
                 {
-                    event = 'blackmarket:BuyMenu',
                     label = "Trade "..v.Name,
+                    event = 'blackmarket:BuyMenu',
                     args = v,
                     icon = "fa-solid fa-box-archive",
                     iconColor = "yellow",
                     distance = 2, 
-                    debug = Config.Debug,
                 },
             },
         })
@@ -83,13 +81,12 @@ CreateThread(function()
         debug = Config.Debug,
         options = {
             {
-                event = 'blackmarket:EntranceMenu',
                 label = "Speak to "..entrance.EntrancePedName,
+                event = 'blackmarket:EntranceMenu',
                 args = entrance.EntrancePedName,
                 icon = "fa-solid fa-box-archive",
                 iconColor = "yellow",
                 distance = 2, 
-                debug = Config.Debug,
             },
         },
     })
@@ -148,13 +145,12 @@ CreateThread(function()
         debug = Config.Debug,
         options = {
             {
-                event = 'blackmarket:RepairMenu',
                 label = "Speak to "..repair.RepairsPedName,
+                event = 'blackmarket:RepairMenu',
                 args = repair,
                 icon = "fa-solid fa-box-archive",
                 iconColor = "yellow",
                 distance = 2, 
-                debug = Config.Debug,
             },
         },
     })
