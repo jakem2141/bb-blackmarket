@@ -32,7 +32,6 @@ RegisterNetEvent('blackmarket:client:LaunderMoney', function(input, data)
 
     if lib.progressCircle({
         duration = 1500,
-        position = 'bottom',
         label = "Handing over cash",
         useWhileDead = false,
         canCancel = true,
@@ -70,7 +69,6 @@ RegisterNetEvent('blackmarket:client:RobStore', function(data)
 
     if lib.progressCircle({
         duration = Config.RobDuration * 1000,
-        position = 'bottom',
         label = "Robbing store",
         useWhileDead = false,
         canCancel = true,
